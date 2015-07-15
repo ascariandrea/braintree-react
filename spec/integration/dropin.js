@@ -26,9 +26,8 @@ describe('Drop-in Integration', function() {
         console.log('page console -> ', msg);
       });
 
-      page.open(baseURL+'/test-dropin.html', function(status) {
+      page.open(baseURL + '/test-dropin.html', function(status) {
         page.evaluate(function() { return document.documentElement.innerHTML; }, function(result) {
-
           assert(result.indexOf('iframe') !== -1, 'adds an iframe to the page');
           var input = '<input type="hidden" name="payment_method_nonce">';
           assert(result.indexOf(input) !== -1, 'adds nonce input');
@@ -63,5 +62,3 @@ describe('Drop-in Integration', function() {
     done();
   });
 });
-
-
