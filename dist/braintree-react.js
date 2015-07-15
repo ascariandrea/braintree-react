@@ -48,11 +48,22 @@ var DropIn = ReactInstance.createClass({
     };
   },
 
+  componentDidMount: function() {
+    this.initializeBraintree(this.props);
+  },
+
   componentWillReceiveProps: function(nextProps) {
-    if (nextProps.braintree && !this.state.braintreeInitialized) {
+    this.initializeBraintree(nextProps);
+  },
+
+  initializeBraintree: function(props) {
+    props = props || this.props;
+    console.log(props);
+    if (props.braintree && !this.state.braintreeInitialized) {
       this.setState({
         braintreeInitialized: true
       }, function() {
+        console.log('initialized');
         var clientToken;
         if (this.props.clientToken) {
           clientToken = this.props.clientToken;
@@ -60,8 +71,9 @@ var DropIn = ReactInstance.createClass({
           console.warn('BraintreeDropIn usually needs a clientToken prop. Using dummy client token for now. This will not work in sandbox or production.');
           clientToken = dummyClientToken;
         }
-
-        nextProps.braintree.setup(
+        console.log('clientToken', clientToken);
+        console.log(this.getDOMNode());
+        props.braintree.setup(
           clientToken,
           'dropin', {
             container: this.getDOMNode(),
@@ -69,11 +81,12 @@ var DropIn = ReactInstance.createClass({
             onReady: this.props.onReady
           }
         );
-      })
+      });
     }
   },
 
   render: function() {
+    console.log(this.props.rootClassName);
     return ReactInstance.DOM.div({
       className: this.props.rootClassName
     });
