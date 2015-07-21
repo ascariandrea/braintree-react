@@ -69,6 +69,11 @@ A callback triggered when the DropIn iFrame has been written to the DOM, i.e. it
 The class name of the outer DOM container.
 *Default*: `__braintree-react__`
 
+### `paypal`
+PayPal specific configuration
+(see https://developers.braintreepayments.com/javascript+php/guides/drop-in#paypal)
+*Default*: `null`
+
 ## Notes
 - The use of `jsx` is not required. Both `<Dropin />` and `DropIn()` are valid.
 - Drop-In is currently the only supported integration method.
