@@ -30,6 +30,10 @@ React.render(
 
 This should be `braintree-web`.
 
+### `containerId`
+
+The Drop-In container id for braintree setup.
+
 ### `clientToken` (required)
 
 The client token used to set up the integration. Learn [how to generate a client token](https://developers.braintreepayments.com/start/hello-server#generate-a-client-token).
