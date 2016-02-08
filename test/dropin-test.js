@@ -15,7 +15,7 @@ describe('DropIn', () => {
 
     // Render a checkbox with label in the document
     const dropin = TestUtils.renderIntoDocument(
-      <DropIn 
+      <DropIn
         clientToken='bogus'
         braintree={braintree}
         />
