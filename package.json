@@ -21,8 +21,7 @@
     "react-component"
   ],
   "dependencies": {
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2"
+    "react": "^0.13.0"
   },
   "devDependencies": {
     "babel-jest": "^6.0.1",
